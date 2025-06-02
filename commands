@@ -1,0 +1,26 @@
+start milvus
+Download the installation script
+curl -sfL https://raw.githubusercontent.com/milvus-io/milvus/master/scripts/standalone_embed.sh -o standalone_embed.sh
+Start the Docker container
+bash standalone_embed.sh start
+
+tutorial:
+https://milvus.io/docs/install_standalone-docker.md
+
+
+https://github.com/zilliztech/mcp-server-milvus
+
+uv run src/mcp_server_milvus/server.py --milvus-uri http://localhost:19530
+
+SSE Mode
+uv run src/mcp_server_milvus/server.py --sse --milvus-uri http://localhost:19530 --port 8000
+
+Debugging in SSE Mode
+mcp dev src/mcp_server_milvus/server.py
+http://127.0.0.1:6274
+
+
+connection paso a paso
+.venv\Scripts\activate
+uv run src/mcp_server_milvus/server.py --milvus-uri http://localhost:19530
+http://localhost:8000/sse
